@@ -10,11 +10,13 @@ public class Player : MonoBehaviour
     public float w_speed, wb_speed, olw_speed, rn_speed, ro_speed;
     public bool walking;
     public Transform playerTrans;
+    
 
 
     // Aqui e a funcao void FixedUpdate(), Incluindo os codigos de movimento 
     void FixedUpdate()
     {
+        
         if(Input.GetKey(KeyCode.W))
         {
             playerRigid.velocity = transform.forward * w_speed * Time.deltaTime;

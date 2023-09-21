@@ -13,7 +13,7 @@ public class Animation_Objs : MonoBehaviour
 
     private void Update()
     {
-        // Ativar a animação quando necessário
+        // ativar a animacao quando preciso
         if (Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetTrigger("serra_animation");

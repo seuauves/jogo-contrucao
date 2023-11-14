@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Layer_Character : MonoBehaviour
 {
-
     private Animator animator;
 
     public string parametroDaAnimacao = "Cube.001|Cube.001Action";
@@ -17,7 +16,7 @@ public class Layer_Character : MonoBehaviour
         if (animator != null && !string.IsNullOrEmpty(parametroDaAnimacao))
         {
             animator.SetTrigger(parametroDaAnimacao);
-
+            
         }
 
         else
@@ -32,4 +31,6 @@ public class Layer_Character : MonoBehaviour
     {
         
     }
+
+
 }

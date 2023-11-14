@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public float w_speed, wb_speed, olw_speed, rn_speed, ro_speed;
     public bool walking;
     public Transform playerTrans;
-    
+    public AudioSource audioSource3;
 
 
     // Aqui e a funcao void FixedUpdate(), Incluindo os codigos de movimento 
@@ -20,11 +20,13 @@ public class Player : MonoBehaviour
         if(Input.GetKey(KeyCode.W))
         {
             playerRigid.velocity = transform.forward * w_speed * Time.deltaTime;
+            PlayCharacterSound();
 
         }
         if(Input.GetKey(KeyCode.S))
         {
             playerRigid.velocity = -transform.forward * wb_speed * Time.deltaTime;
+            PlayCharacterSound();
         }
 
     }
@@ -40,6 +42,7 @@ public class Player : MonoBehaviour
             playerAnim.SetTrigger("walk");
             playerAnim.ResetTrigger("idle");
             walking = true;
+            PlayCharacterSound();
         }
         if(Input.GetKeyUp(KeyCode.W))
         {
@@ -47,11 +50,13 @@ public class Player : MonoBehaviour
             playerAnim.ResetTrigger("walk");
             playerAnim.SetTrigger("idle");
             walking = false;
+            
         }
         if(Input.GetKeyDown(KeyCode.S))
         {
             playerAnim.SetTrigger("walkback");
             playerAnim.ResetTrigger("idle");
+            PlayCharacterSound();
         }
         if(Input.GetKey(KeyCode.A))
         {
@@ -81,17 +86,16 @@ public class Player : MonoBehaviour
                 playerAnim.SetTrigger("walk");
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
     }
+
+    void PlayCharacterSound()
+    {
+        if (audioSource3 != null && !audioSource3.isPlaying)
+        {
+            audioSource3.Play();
+        }
+    }
+
+
+
 }

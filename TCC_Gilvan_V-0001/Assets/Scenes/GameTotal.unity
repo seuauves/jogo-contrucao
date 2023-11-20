@@ -1068,31 +1068,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f97d9dcba65c6742886c2f469ecec61, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6830127
+      value: 0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f97d9dcba65c6742886c2f469ecec61, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.6830127
+      value: -0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f97d9dcba65c6742886c2f469ecec61, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.1830127
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f97d9dcba65c6742886c2f469ecec61, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.18301268
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f97d9dcba65c6742886c2f469ecec61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f97d9dcba65c6742886c2f469ecec61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f97d9dcba65c6742886c2f469ecec61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2f97d9dcba65c6742886c2f469ecec61, type: 3}
       propertyPath: m_Name
@@ -1103,11 +1103,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f97d9dcba65c6742886c2f469ecec61, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 769485058}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f97d9dcba65c6742886c2f469ecec61, type: 3}
       insertIndex: -1
       addedObject: {fileID: 769485051}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f97d9dcba65c6742886c2f469ecec61, type: 3}
       insertIndex: -1
       addedObject: {fileID: 769485052}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f97d9dcba65c6742886c2f469ecec61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 769485059}
   m_SourcePrefab: {fileID: 100100000, guid: 2f97d9dcba65c6742886c2f469ecec61, type: 3}
 --- !u!1 &155888106 stripped
 GameObject:
@@ -1247,7 +1253,7 @@ GameObject:
   - component: {fileID: 163431080}
   m_Layer: 0
   m_Name: Entrar2
-  m_TagString: Untagged
+  m_TagString: SegundoObjeto
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1280,6 +1286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b7d960be79d37429f68c77496ca489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objetoAtivado: {fileID: 1917918431}
+  distanciaMax: 3
 --- !u!65 &163431081
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8762,6 +8770,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Serra_sAnima
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 35a29068313cbbc44be7bd9ff65248c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9228,6 +9240,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2f97d9dcba65c6742886c2f469ecec61, type: 3}
   m_PrefabInstance: {fileID: 134137732}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &769485058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769485047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36855c0b7fc021b44a78a4c9b2a1f336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serraCostas: {fileID: 1917918431}
+--- !u!65 &769485059
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769485047}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.011537183, y: 0.0015114938, z: 0.019028699}
+  m_Center: {x: 0.00008394662, y: 0.0000018587451, z: 0.0022093696}
 --- !u!4 &830304025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c371b9db4b0bd4d44a427b3fa0ac452d, type: 3}
@@ -16000,6 +16046,11 @@ Transform:
   - {fileID: 2138041289}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1917918431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 35a29068313cbbc44be7bd9ff65248c5, type: 3}
+  m_PrefabInstance: {fileID: 714608142}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1922018506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16436,7 +16487,7 @@ GameObject:
   - component: {fileID: 2057298994}
   m_Layer: 0
   m_Name: Entrar
-  m_TagString: Untagged
+  m_TagString: SegundoObjeto
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16490,6 +16541,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b7d960be79d37429f68c77496ca489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objetoAtivado: {fileID: 1917918431}
+  distanciaMax: 3
 --- !u!1001 &2097296147
 PrefabInstance:
   m_ObjectHideFlags: 0

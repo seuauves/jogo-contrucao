@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public Transform playerTrans;
     public AudioSource audioSource3;
 
+    public float health = 100;
 
     // Aqui e a funcao void FixedUpdate(), Incluindo os codigos de movimento 
     void FixedUpdate()
@@ -36,6 +37,7 @@ public class Player : MonoBehaviour
     // Update e os codigos das animacoes
     void Update()
     {
+
         if(Input.GetKeyDown (KeyCode.W))
         {
             //Quando o W for pressionado, a animacao 'walk' sera setada e o 'idle' sera resetado.
@@ -93,6 +95,19 @@ public class Player : MonoBehaviour
         if (audioSource3 != null && !audioSource3.isPlaying)
         {
             audioSource3.Play();
+        }
+    }
+
+    public void Dano()
+    {
+        
+    }
+
+    private void OnTriggerEnter(Collider obj)
+    {
+        if(obj.gameObject.tag == "Bullet")
+        {
+            health -= 25;
         }
     }
 

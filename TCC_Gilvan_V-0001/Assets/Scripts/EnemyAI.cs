@@ -13,6 +13,8 @@ public class EnemyAI : MonoBehaviour
 
     public float health;
 
+    public int attackDelay;
+    private float lastAttack = 0f;
 
     //Patroling
     public Vector3 walkPoint;
@@ -30,7 +32,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("PlayerObj").transform;
+        player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -93,17 +95,22 @@ public class EnemyAI : MonoBehaviour
         transform.LookAt(player);
 
         if (!alreadyAttacked)
-        {
-            //Attack code here
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+        {   
+            if (Time.time > attackDelay+lastAttack)
+            {
+                lastAttack = Time.time+attackDelay;
+                //Attack code here
+                Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
 
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+                rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+                rb.AddForce(transform.up * 8f, ForceMode.Impulse);
 
-            //
+                //
             
-            alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+                alreadyAttacked = true;
+                Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            }
+            
         }
     }
 
